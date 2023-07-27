@@ -1,4 +1,5 @@
 import React from "react";
+import Collabs from "./Collabs";
 
 const Main = () => {
   return (
@@ -26,6 +27,7 @@ const Main = () => {
           <img src="./undraw.png" alt="" className="hidden md:w-auto md:h-auto md:block" />
         </div>
       </div>
+      <Collabs/>
     </div>
   );
 };
