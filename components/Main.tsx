@@ -1,5 +1,6 @@
 import React from "react";
 import Collabs from "./Collabs";
+import Courses from "./Courses";
 
 const Main = () => {
   return (
@@ -28,6 +29,7 @@ const Main = () => {
         </div>
       </div>
       <Collabs/>
+      <Courses/>
     </div>
   );
 };

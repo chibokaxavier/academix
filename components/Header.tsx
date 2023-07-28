@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <>
-      <div className=" border-b-2 lg:block hidden ">
+      <div className=" border-b-2 lg:block hidden  sticky bg-white top-0">
         <div className="flex justify-between mx-5 my-4 items-center">
           <div className="flex space-x-3 justify-center items-center">
             <h1 className="text-4xl text-blue-800 font-semibold">academiX</h1>
@@ -38,9 +38,7 @@ const Header = () => {
             <p className="cursor-pointer flex lg:hidden xl:flex">
               Online degrees
             </p>
-            <p className="cursor-pointer flex lg:flex xl:hidden">
-              Degrees
-            </p>
+            <p className="cursor-pointer flex lg:flex xl:hidden">Degrees</p>
             <p className="hover:underline hover:text-blue-800 cursor-pointer ">
               {" "}
               Find your new career
@@ -54,7 +52,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between mx-3 my-4 lg:hidden items-center">
+      <div className="flex justify-between mx-3 my-4 lg:hidden sticky bg-white top-0 items-center">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
