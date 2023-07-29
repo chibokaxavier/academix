@@ -8,11 +8,61 @@ import React, {
 import courses from "@/courses";
 
 const Courses = () => {
-  const [isPythonActive, setIsPythonActive] = useState(false);
+  const [isPythonActive, setIsPythonActive] = useState(true);
+  const [isExcelActive, setIsExcelActive] = useState(false);
+  const [isWebdevActive, setIsWebdevActive] = useState(false);
+  const [isJavascriptActive, setIsJavascriptActive] = useState(false);
+  const [isDataActive, setIsDataActive] = useState(false);
+  const [isAWSActive, setIsAWSActive] = useState(false);
 
-  // const handleButtonClick = () => {
-  //   setIsActive(!isActive);
-  // };
+  const handlePythonClick = () => {
+    setIsPythonActive(true);
+    setIsAWSActive(false);
+    setIsDataActive(false);
+    setIsExcelActive(false);
+    setIsJavascriptActive(false);
+    setIsWebdevActive(false);
+  };
+  const handleWebdevClick = () => {
+    setIsPythonActive(false);
+    setIsAWSActive(false);
+    setIsDataActive(false);
+    setIsExcelActive(false);
+    setIsJavascriptActive(false);
+    setIsWebdevActive(true);
+  };
+  const handleAWSClick = () => {
+    setIsPythonActive(false);
+    setIsAWSActive(true);
+    setIsDataActive(false);
+    setIsExcelActive(false);
+    setIsJavascriptActive(false);
+    setIsWebdevActive(false);
+  };
+  const handleDataClick = () => {
+    setIsPythonActive(false);
+    setIsAWSActive(false);
+    setIsDataActive(true);
+    setIsExcelActive(false);
+    setIsJavascriptActive(false);
+    setIsWebdevActive(false);
+  };
+  const handleExcelClick = () => {
+    setIsPythonActive(false);
+    setIsAWSActive(false);
+    setIsDataActive(false);
+    setIsExcelActive(true);
+    setIsJavascriptActive(false);
+    setIsWebdevActive(false);
+  };
+  const handleJavascriptClick = () => {
+    setIsPythonActive(false);
+    setIsAWSActive(false);
+    setIsDataActive(false);
+    setIsExcelActive(false);
+    setIsJavascriptActive(true);
+    setIsWebdevActive(false);
+  };
   const python = courses.filter((course) => {
     return course.type === "python";
   });
@@ -33,22 +83,73 @@ const Courses = () => {
         </p>
         <div className="flex flex-col lg:flex-row   lg:space-x-6 font-semibold cursor-pointer pb-5">
           <p
-            onClick={() => setDataArray([python])}
-            className="lg:hover:underline hover:text-gray-500"
+            onClick={() => {
+              setDataArray([python]);
+              handlePythonClick();
+            }}
+            className={`lg:hover:underline ${
+              isPythonActive ? `text-black` : `text-gray-400`
+            }`}
           >
             Python
           </p>
-          <p className="lg:hover:underline hover:text-gray-500"> Excel</p>
           <p
-            className="lg:hover:underline hover:text-gray-500"
-            onClick={() => setDataArray([webdev])}
+            className={`lg:hover:underline ${
+              isExcelActive ? `text-black` : `text-gray-400`
+            }`}
+            onClick={() => {
+              setDataArray([webdev]);
+              handleExcelClick();
+            }}
+          >
+            {" "}
+            Excel
+          </p>
+          <p
+            className={`lg:hover:underline ${
+              isWebdevActive ? `text-black` : `text-gray-400`
+            }`}
+            onClick={() => {
+              setDataArray([webdev]);
+              handleWebdevClick();
+            }}
           >
             {" "}
             Web Development
           </p>
-          <p className="lg:hover:underline hover:text-gray-500">Javascript</p>
-          <p className="lg:hover:underline hover:text-gray-500">Data Science</p>
-          <p className="lg:hover:underline hover:text-gray-500">Amazon AWS</p>
+          <p
+            className={`lg:hover:underline ${
+              isJavascriptActive ? `text-black` : `text-gray-400`
+            }`}
+            onClick={() => {
+              setDataArray([webdev]);
+              handleJavascriptClick();
+            }}
+          >
+            Javascript
+          </p>
+          <p
+            className={`lg:hover:underline ${
+              isDataActive ? `text-black` : `text-gray-400`
+            }`}
+            onClick={() => {
+              setDataArray([webdev]);
+              handleDataClick();
+            }}
+          >
+            Data Science
+          </p>
+          <p
+            className={`lg:hover:underline ${
+              isAWSActive ? `text-black` : `text-gray-400`
+            }`}
+            onClick={() => {
+              setDataArray([webdev]);
+              handleAWSClick();
+            }}
+          >
+            Amazon AWS
+          </p>
         </div>
       </div>
 
