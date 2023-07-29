@@ -52,7 +52,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between mx-3 my-4 lg:hidden sticky bg-white top-0 items-center">
+      <div className="flex justify-between  py-3 px-3 lg:hidden sticky bg-white top-0 items-center">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
