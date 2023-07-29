@@ -70,6 +70,18 @@ const Courses = () => {
   const webdev = courses.filter((course) => {
     return course.type === "Webdev";
   });
+  const excel = courses.filter((course) => {
+    return course.type === "Excel";
+  });
+  const aws = courses.filter((course) => {
+    return course.type === "AWS";
+  });
+  const javascript = courses.filter((course) => {
+    return course.type === "Javascript";
+  });
+  const data = courses.filter((course) => {
+    return course.type === "Data";
+  });
 
   const [dataArray, setDataArray] = useState([python]);
 
@@ -82,29 +94,145 @@ const Courses = () => {
           published every month
         </p>
         <div className="flex flex-col lg:flex-row   lg:space-x-6 font-semibold cursor-pointer pb-5">
-          <p
-            onClick={() => {
-              setDataArray([python]);
-              handlePythonClick();
-            }}
-            className={`lg:hover:underline ${
-              isPythonActive ? `text-black` : `text-gray-400`
-            }`}
-          >
-            Python
-          </p>
-          <p
+          <div className=" md:border-none border-t-2 border-b-2 md:py-0 py-4">
+            <div className="flex justify-between">
+              <p
+                onClick={() => {
+                  setDataArray([python]);
+                  handlePythonClick();
+                }}
+                className={`lg:hover:underline  ${
+                  isPythonActive ? `text-black` : `text-black md:text-gray-400`
+                }`}
+              >
+                Python
+              </p>
+
+              <div
+                onClick={() => setIsPythonActive(!isPythonActive)}
+                className="md:hidden"
+              >
+                {isPythonActive ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                    />
+                  </svg>
+                )}
+              </div>
+            </div>
+
+            {isPythonActive && (
+              <div className="md:hidden ">
+                {python.map((course) => (
+                  <div className="space-y-2 ">
+                    <img src={course.image} alt="" className="pt-4" />
+                    <p>{course.name}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className=" md:border-none border-t-2 border-b-2 md:py-0 py-4">
+            <div className="flex justify-between">
+              <p
+                onClick={() => {
+                  setDataArray([excel]);
+                  handleExcelClick();
+                }}
+                className={`lg:hover:underline   ${
+                  isExcelActive ? `text-black` : `text-black md:text-gray-400`
+                }`}
+              >
+                Excel
+              </p>
+
+              <div
+                onClick={() => setIsExcelActive(!isExcelActive)}
+                className="md:hidden"
+              >
+                {isExcelActive ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                    />
+                  </svg>
+                )}
+              </div>
+            </div>
+
+            {isExcelActive && (
+              <div className="md:hidden ">
+                {excel.map((course) => (
+                  <div className="space-y-2 ">
+                    <img src={course.image} alt="" />
+                    <p>{course.name}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* <p
             className={`lg:hover:underline ${
               isExcelActive ? `text-black` : `text-gray-400`
             }`}
             onClick={() => {
-              setDataArray([webdev]);
+              setDataArray([excel]);
               handleExcelClick();
             }}
           >
             {" "}
             Excel
-          </p>
+          </p> */}
           <p
             className={`lg:hover:underline ${
               isWebdevActive ? `text-black` : `text-gray-400`
@@ -122,7 +250,7 @@ const Courses = () => {
               isJavascriptActive ? `text-black` : `text-gray-400`
             }`}
             onClick={() => {
-              setDataArray([webdev]);
+              setDataArray([javascript]);
               handleJavascriptClick();
             }}
           >
@@ -133,7 +261,7 @@ const Courses = () => {
               isDataActive ? `text-black` : `text-gray-400`
             }`}
             onClick={() => {
-              setDataArray([webdev]);
+              setDataArray([data]);
               handleDataClick();
             }}
           >
@@ -144,7 +272,7 @@ const Courses = () => {
               isAWSActive ? `text-black` : `text-gray-400`
             }`}
             onClick={() => {
-              setDataArray([webdev]);
+              setDataArray([aws]);
               handleAWSClick();
             }}
           >
@@ -154,14 +282,17 @@ const Courses = () => {
       </div>
 
       <div className="w-[50%] h-fit my-5 hidden lg:block bg-red border-2">
-        {dataArray.map((data) => (
-          <div>
-            {data.map((course) => (
-              <div className="p-2 space-y-5 flex flex-col cursor-pointer">
+        {dataArray.map((data, i) => (
+          <div key={i}>
+            {data.map((course, i) => (
+              <div
+                key={i}
+                className="p-2 space-y-5 flex flex-col cursor-pointer"
+              >
                 <p className="text-2xl font-bold">{course.header}</p>
                 <p className="text-base">{course.text}</p>
-                <img src={course.image} alt="" />
-                <p className="font-bold text-sm">{course.name}</p>
+                <img src={course.image} alt="" className="" />
+                <p className="font-bold text-lg">{course.name}</p>
               </div>
             ))}
           </div>
