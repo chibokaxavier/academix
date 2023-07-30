@@ -82,7 +82,7 @@ const Courses = () => {
   const [dataArray, setDataArray] = useState([python]);
 
   return (
-    <div className="xl:mx-[160px] mx-5 md:mx-10 mb-10">
+    <div className="xl:mx-[160px] mx-5 md:mx-10 mb-10 ">
       <div className="flex-col space-y-4">
         <p className="text-3xl font-semibold">A broad selection of courses</p>
         <p className="text-xl">
@@ -114,8 +114,8 @@ const Courses = () => {
 
             {isPythonActive && (
               <div className="md:hidden ">
-                {python.map((course) => (
-                  <div className="space-y-2 ">
+                {python.map((course, i) => (
+                  <div className="space-y-2 " key={i}>
                     <img src={course.image} alt="" className="pt-4" />
                     <div>
                       <p className="text-lg">{course.name}</p>
@@ -152,8 +152,8 @@ const Courses = () => {
 
             {isExcelActive && (
               <div className="md:hidden ">
-                {excel.map((course) => (
-                  <div className="space-y-2 ">
+                {excel.map((course, i) => (
+                  <div className="space-y-2 " key={i}>
                     <img src={course.image} alt="" className="pt-4" />
                     <div>
                       <p className="text-lg">{course.name}</p>
@@ -203,8 +203,8 @@ const Courses = () => {
 
             {isWebdevActive && (
               <div className="md:hidden ">
-                {webdev.map((course) => (
-                  <div className="space-y-2 ">
+                {webdev.map((course, i) => (
+                  <div className="space-y-2 " key={i}>
                     <img src={course.image} alt="" className="pt-4" />
                     <div>
                       <p className="text-lg">{course.name}</p>
@@ -243,8 +243,8 @@ const Courses = () => {
 
             {isJavascriptActive && (
               <div className="md:hidden ">
-                {javascript.map((course) => (
-                  <div className="space-y-2 ">
+                {javascript.map((course, i) => (
+                  <div className="space-y-2 " key={i}>
                     <img src={course.image} alt="" className="pt-4" />
                     <div>
                       <p className="text-lg">{course.name}</p>
@@ -281,8 +281,8 @@ const Courses = () => {
 
             {isDataActive && (
               <div className="md:hidden ">
-                {data.map((course) => (
-                  <div className="space-y-2 ">
+                {data.map((course, i) => (
+                  <div className="space-y-2 " key={i}>
                     <img src={course.image} alt="" className="pt-4" />
                     <div>
                       <p className="text-lg">{course.name}</p>
@@ -319,8 +319,8 @@ const Courses = () => {
 
             {isAWSActive && (
               <div className="md:hidden ">
-                {aws.map((course) => (
-                  <div className="space-y-2 ">
+                {aws.map((course, i) => (
+                  <div className="space-y-2 " key={i}>
                     <img src={course.image} alt="" className="pt-4" />
                     <div>
                       <p className="text-lg">{course.name}</p>
@@ -336,7 +336,7 @@ const Courses = () => {
         </div>
       </div>
 
-      <div className="w-[50%] h-fit my-5 hidden md:block bg-red border-2">
+      <div className="w-[50%] h-fit p-5 hidden md:block bg-red border-2 rounded-md shadow-xl">
         {dataArray.map((data, i) => (
           <div key={i}>
             {data.map((course, i) => (

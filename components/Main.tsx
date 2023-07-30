@@ -1,6 +1,7 @@
 import React from "react";
 import Collabs from "./Collabs";
 import Courses from "./Courses";
+import Explore from "./Explore";
 
 const Main = () => {
   return (
@@ -16,20 +17,25 @@ const Main = () => {
             and companies.
           </p>
           <div className="flex md:flex-row flex-col space-y-5 md:space-y-0 justify-center md:space-x-5">
-            <button className="bg-blue-600 hover:bg-blue-800 p-4 px-6 text-white rounded-sm">
+            <button className="bg-blue-600 hover:bg-blue-800 p-4 px-6 text-white rounded-md">
               Join for Free
             </button>
-            <button className=" px-6 p-4 text-blue-800 hover:bg-slate-100 border-blue-800 border-2 rounded-sm">
+            <button className=" px-6 p-4 text-blue-800 hover:bg-slate-100 border-blue-800 border-2 rounded-md">
               Try academiX for Business
             </button>
           </div>
         </div>
         <div>
-          <img src="./undraw.png" alt="" className="hidden md:w-auto md:h-auto md:block" />
+          <img
+            src="./undraw.png"
+            alt=""
+            className="hidden md:w-auto md:h-auto md:block"
+          />
         </div>
       </div>
-      <Collabs/>
-      <Courses/>
+      <Collabs />
+      <Courses />
+      <Explore />
     </div>
   );
 };
