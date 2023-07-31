@@ -33,7 +33,7 @@ const Courses = () => {
           <p className="text-2xl font-bold">{course?.name}</p>
           <p className="md:font-semibold text-lg">{course?.text}</p>
           <div className="flex flex-col md:flex-row md:items-center md:space-x-2  space-y-1 md:space-y-0">
-            <div className=" h-8 px-1 font-bold w-[90px] flex items-center justify-center bg-yellow-200 text-black">
+            <div className=" h-8 w font-bold w-[110px] flex items-center justify-center bg-yellow-200 text-black">
               Best Seller
             </div>
             <div className="flex md:items-center md:justify-center ">
