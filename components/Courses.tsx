@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import courses from "@/courses";
 import Arrowdown from "./Arrowdown";
 import Arrowup from "./Arrowup";
+import Link from "next/link";
 
 const Courses = () => {
   const [isPythonActive, setIsPythonActive] = useState(true);
@@ -90,6 +91,7 @@ const Courses = () => {
           published every month
         </p>
         <div className="flex flex-col md:flex-row   md:space-x-6 font-semibold cursor-pointer pb-5">
+          {/* <Link href={`/courses/${}`} >  */}
           <div className=" md:border-none border-t-2 border-b-2 md:py-0 py-4">
             <div className="flex justify-between">
               <p
@@ -115,19 +117,23 @@ const Courses = () => {
             {isPythonActive && (
               <div className="md:hidden ">
                 {python.map((course, i) => (
-                  <div className="space-y-2 " key={i}>
-                    <img src={course.image} alt="" className="pt-4" />
-                    <div>
-                      <p className="text-lg">{course.name}</p>
-                      <p className="text-sm text-gray-400">
-                        {course.instructor}
-                      </p>
+                  <Link href={`/courses/${course.id}`}>
+                    <div className="space-y-2 " key={i}>
+                      <img src={course.image} alt="" className="pt-4" />
+                      <div>
+                        <p className="text-lg">{course.name}</p>
+                        <p className="text-sm text-gray-400">
+                          {course.instructor}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
           </div>
+          {/* </Link> */}
+
           <div className=" md:border-none border-t-2 border-b-2 md:py-0 py-4">
             <div className="flex justify-between">
               <p
@@ -340,18 +346,20 @@ const Courses = () => {
         {dataArray.map((data, i) => (
           <div key={i}>
             {data.map((course, i) => (
-              <div
-                key={i}
-                className="p-2 space-y-5 flex flex-col cursor-pointer"
-              >
-                <p className="text-2xl font-bold">{course.header}</p>
-                <p className="text-base">{course.text}</p>
-                <img src={course.image} alt="" className="" />
-                <div>
-                  <p className="font-bold text-2xl">{course.name}</p>
-                  <p className="text-gray-400">{course.instructor}</p>
+              <Link href={`/courses/${course.id}`}>
+                <div
+                  key={i}
+                  className="p-2 space-y-5 flex flex-col cursor-pointer"
+                >
+                  <p className="text-2xl font-bold">{course.header}</p>
+                  <p className="text-base">{course.text}</p>
+                  <img src={course.image} alt="" className="" />
+                  <div>
+                    <p className="font-bold text-2xl">{course.name}</p>
+                    <p className="text-gray-400">{course.instructor}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         ))}

@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="flex justify-between flex-col md:flex-row items-center space-y-5 md:space-y-0 border-t py-10 xl:mx-[160px] mx-5 md:mx-10">
+    <div className="flex justify-between flex-col md:flex-row items-center space-y-5  border-t py-10  xl:mx-[160px] mx-5 md:mx-10">
       <div>© 2023 academiX Inc. All rights reserved.</div>
       <div className="flex  space-x-3">
         <AiOutlineInstagram className="w-8 h-8 cursor-pointer" />
