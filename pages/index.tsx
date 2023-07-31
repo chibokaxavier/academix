@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>academiX</title>
       </Head>
-      <main>
+      <main className="scrollbar-hide">
         <Header />
         <Main />
       </main>
