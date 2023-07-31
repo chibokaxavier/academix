@@ -117,7 +117,7 @@ const Courses = () => {
             {isPythonActive && (
               <div className="md:hidden ">
                 {python.map((course, i) => (
-                  <Link href={`/courses/${course.id}`}>
+                  <Link href={`/courses/${course.id}`} key={i}>
                     <div className="space-y-2 " key={i}>
                       <img src={course.image} alt="" className="pt-4" />
                       <div>
@@ -159,15 +159,17 @@ const Courses = () => {
             {isExcelActive && (
               <div className="md:hidden ">
                 {excel.map((course, i) => (
-                  <div className="space-y-2 " key={i}>
-                    <img src={course.image} alt="" className="pt-4" />
-                    <div>
-                      <p className="text-lg">{course.name}</p>
-                      <p className="text-sm text-gray-400">
-                        {course.instructor}
-                      </p>
+                  <Link href={`/courses/${course.id}`} key={i}>
+                    <div className="space-y-2 " key={i}>
+                      <img src={course.image} alt="" className="pt-4" />
+                      <div>
+                        <p className="text-lg">{course.name}</p>
+                        <p className="text-sm text-gray-400">
+                          {course.instructor}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
@@ -210,15 +212,17 @@ const Courses = () => {
             {isWebdevActive && (
               <div className="md:hidden ">
                 {webdev.map((course, i) => (
-                  <div className="space-y-2 " key={i}>
-                    <img src={course.image} alt="" className="pt-4" />
-                    <div>
-                      <p className="text-lg">{course.name}</p>
-                      <p className="text-sm text-gray-400">
-                        {course.instructor}
-                      </p>
+                  <Link href={`/courses/${course.id}`} key={i}>
+                    <div className="space-y-2 " key={i}>
+                      <img src={course.image} alt="" className="pt-4" />
+                      <div>
+                        <p className="text-lg">{course.name}</p>
+                        <p className="text-sm text-gray-400">
+                          {course.instructor}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
@@ -250,15 +254,17 @@ const Courses = () => {
             {isJavascriptActive && (
               <div className="md:hidden ">
                 {javascript.map((course, i) => (
-                  <div className="space-y-2 " key={i}>
-                    <img src={course.image} alt="" className="pt-4" />
-                    <div>
-                      <p className="text-lg">{course.name}</p>
-                      <p className="text-sm text-gray-400">
-                        {course.instructor}
-                      </p>
+                  <Link href={`/courses/${course.id}`} key={i}>
+                    <div className="space-y-2 " key={i}>
+                      <img src={course.image} alt="" className="pt-4" />
+                      <div>
+                        <p className="text-lg">{course.name}</p>
+                        <p className="text-sm text-gray-400">
+                          {course.instructor}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
@@ -288,15 +294,17 @@ const Courses = () => {
             {isDataActive && (
               <div className="md:hidden ">
                 {data.map((course, i) => (
-                  <div className="space-y-2 " key={i}>
-                    <img src={course.image} alt="" className="pt-4" />
-                    <div>
-                      <p className="text-lg">{course.name}</p>
-                      <p className="text-sm text-gray-400">
-                        {course.instructor}
-                      </p>
+                  <Link href={`/courses/${course.id}`} key={i}>
+                    <div className="space-y-2 " key={i}>
+                      <img src={course.image} alt="" className="pt-4" />
+                      <div>
+                        <p className="text-lg">{course.name}</p>
+                        <p className="text-sm text-gray-400">
+                          {course.instructor}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
@@ -326,15 +334,17 @@ const Courses = () => {
             {isAWSActive && (
               <div className="md:hidden ">
                 {aws.map((course, i) => (
-                  <div className="space-y-2 " key={i}>
-                    <img src={course.image} alt="" className="pt-4" />
-                    <div>
-                      <p className="text-lg">{course.name}</p>
-                      <p className="text-sm text-gray-400">
-                        {course.instructor}
-                      </p>
+                  <Link href={`/courses/${course.id}`} key={i}>
+                    <div className="space-y-2 " key={i}>
+                      <img src={course.image} alt="" className="pt-4" />
+                      <div>
+                        <p className="text-lg">{course.name}</p>
+                        <p className="text-sm text-gray-400">
+                          {course.instructor}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
@@ -346,7 +356,7 @@ const Courses = () => {
         {dataArray.map((data, i) => (
           <div key={i}>
             {data.map((course, i) => (
-              <Link href={`/courses/${course.id}`}>
+              <Link href={`/courses/${course.id}`} key={i}>
                 <div
                   key={i}
                   className="p-2 space-y-5 flex flex-col cursor-pointer"
